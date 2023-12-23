@@ -22,9 +22,7 @@ const Mobiles = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const response = await fetch(
-        "https://mobile-bite-backend.vercel.app/api/displayMobiles"
-      );
+      const response = await fetch("http://localhost:8000/api/displayMobiles");
       const data = await response.json();
 
       if (data && data.mobiles && Array.isArray(data.mobiles.mobiles)) {

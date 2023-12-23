@@ -9,7 +9,7 @@ const MobileDetails = () => {
     const fetchMobileDetails = async () => {
       try {
         const response = await fetch(
-          `https://mobile-bite-backend.vercel.app/api/mobiles/${mobileId}`
+          `http://localhost:8000/api/mobiles/${mobileId}`
         );
         const data = await response.json();
 
