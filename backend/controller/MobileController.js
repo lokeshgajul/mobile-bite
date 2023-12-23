@@ -1,6 +1,6 @@
-import mobileData from "../json/mobilesData.json" assert { type: "json" };
+const mobileData = require("../json/mobilesData.json");
 
-export const displayMobiles = async (req, res) => {
+const displayMobiles = async (req, res) => {
   try {
     console.log("Fetching mobile data...");
     res.json({ mobiles: mobileData });
@@ -10,7 +10,7 @@ export const displayMobiles = async (req, res) => {
   }
 };
 
-export const mobileDetails = async (req, res) => {
+const mobileDetails = async (req, res) => {
   const { mobileId } = req.params;
   try {
     console.log(`Fetching details for mobileId: ${mobileId}`);
@@ -29,7 +29,7 @@ export const mobileDetails = async (req, res) => {
   }
 };
 
-export const filterByPrice = async (req, res) => {
+const filterByPrice = async (req, res) => {
   try {
     console.log("Filtering by price...");
     const { filteredPrice } = req.body;
@@ -52,7 +52,7 @@ export const filterByPrice = async (req, res) => {
   }
 };
 
-export const filterByName = async (req, res) => {
+const filterByName = async (req, res) => {
   const { mobileName } = req.body;
   try {
     console.log(`Filtering by name: ${mobileName}`);
@@ -72,7 +72,7 @@ export const filterByName = async (req, res) => {
   }
 };
 
-export const filterByProcessor = (req, res) => {
+const filterByProcessor = (req, res) => {
   const { mobileProcessor } = req.body;
   try {
     console.log(`Filtering by name: ${mobileProcessor}`);
@@ -92,9 +92,7 @@ export const filterByProcessor = (req, res) => {
   }
 };
 
-// mobileController.js
-
-export const filterByMemory = (req, res) => {
+const filterByMemory = (req, res) => {
   const { selectedMemory } = req.body;
 
   try {
@@ -127,4 +125,13 @@ export const filterByMemory = (req, res) => {
     console.error("Error filtering mobiles:", error);
     return res.status(500).json({ error: "Internal server error" });
   }
+};
+
+module.exports = {
+  displayMobiles,
+  mobileDetails,
+  filterByPrice,
+  filterByName,
+  filterByProcessor,
+  filterByMemory,
 };
