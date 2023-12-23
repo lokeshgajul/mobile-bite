@@ -105,7 +105,6 @@ export const filterByMemory = (req, res) => {
 
     console.log("Original Mobile Data:", mobileData.mobiles);
 
-    // Split the selectedMemory into an array of memory values
     const memoryParts = selectedMemory.split(" ");
 
     // Filter mobiles based on each memory part
