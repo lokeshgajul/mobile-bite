@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { CiSearch } from "react-icons/ci";
+import { SlRefresh } from "react-icons/sl";
 
 const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
@@ -6,6 +8,16 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
   const [mobileProcessor, setMobileProcessor] = useState("");
   const [mobileDetails, setMobileDetails] = useState(null);
   const [selectedMemory, setSelectedMemory] = useState("");
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const handleRefreshClick = () => {
+    // Reload the entire page
+    window.location.reload();
+  };
+
+  const toggleSearchVisibility = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
 
   const handleFilterByMemory = async (event) => {
     const Memory = event.target.value;
@@ -150,10 +162,19 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
   };
 
   return (
-    <div className="py-3 max-md:flex flex-col">
-      <h2 className="pb-5">Filters</h2>
+    <div className="py-3 flex flex-col">
+      <div className="flex justify-between py-2">
+        <div>
+          <h2 className="text-2xl">Filters</h2>
+        </div>
+        <div className="flex" onClick={handleRefreshClick}>
+          <SlRefresh size={25} className="cursor-pointer mx-2 " />
+          <span>Refresh</span>
+        </div>
+      </div>
+
       <label htmlFor="priceRange">Price Range:</label>
-      <div className="flex flex-col my-2">
+      <div className="flex flex-col py-1">
         <select
           className="max-w-[70%] py-1"
           id="priceRange"
@@ -173,7 +194,7 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
         </p>
       </div>
 
-      <div className="flex flex-col py-3">
+      <div className="flex flex-col py-2">
         <select
           className="max-w-[70%] py-1"
           id="priceRange"
@@ -188,26 +209,9 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
           <option value="Exynos">Exynos </option>
           <option value="A15 Bionic">A15 Bionic</option>
         </select>
-        <p className="py-2">
+        <p className="py-2 ">
           selected processor : {mobileProcessor ? mobileProcessor : "all "}
         </p>
-      </div>
-
-      <div>
-        <input
-          className="border-2 border-black rounded-md bg-blue-200 mr-2 p-1.5"
-          type="text"
-          value={mobileName}
-          onChange={handleNameChange}
-          placeholder="Search mobile here..."
-        />
-        <button onClick={handleFilterByName}>Filter by Name</button>
-
-        {mobileDetails && (
-          <div>
-            <h2>{mobileDetails.name}</h2>
-          </div>
-        )}
       </div>
 
       <div className="flex flex-col py-3">
@@ -229,6 +233,40 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
             ? `Selected Memory ${selectedMemory}`
             : "Filter by RAM and Memory "}
         </p>
+      </div>
+
+      <div className="flex max-md:justify-end items-center">
+        <input
+          className={`max-w-[60%] border-black rounded-md mr-2 p-1 max-md:hidden`}
+          type="text"
+          value={mobileName}
+          onChange={handleNameChange}
+          placeholder="Search mobile here..."
+        />
+        <CiSearch
+          size={30}
+          className="cursor-pointer md:hidden text-center"
+          onClick={toggleSearchVisibility}
+        />
+
+        {/* Input for screens larger than or equal to md */}
+        <input
+          className={` max-w-[60%] border-black rounded-md mr-2 p-1 ${
+            isSearchVisible ? "block" : "hidden"
+          }`}
+          type="text"
+          value={mobileName}
+          onChange={handleNameChange}
+          placeholder="Search mobile here..."
+        />
+
+        <button onClick={handleFilterByName}>Filter by Name</button>
+
+        {mobileDetails && (
+          <div>
+            <h2>{mobileDetails.name}</h2>
+          </div>
+        )}
       </div>
     </div>
   );
