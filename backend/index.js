@@ -13,13 +13,14 @@ const app = express();
 const PORT = 8000;
 
 app.use(express.json());
-const corsOptions = {
-  origin: "https://mobile-lite-backend.vercel.app/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-};
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://mobile-bite-backend.vercel.app/",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Hello, this is the backend!");
