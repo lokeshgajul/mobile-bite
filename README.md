@@ -37,7 +37,7 @@ git clone https://github.com/lokeshgajul/mobile-bite.git
 * Navigate to the backend project directory:
 cd backend
 
-* Install backend dependencies:
+* Install backend dependencies:  
 npm init -y   
 npm install express  
 npm install cors  
