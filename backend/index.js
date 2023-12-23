@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://mobile-bite-backend.vercel.app/",
+    origin: "https://mobile-bite-backend.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
