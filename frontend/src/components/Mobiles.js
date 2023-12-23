@@ -61,8 +61,8 @@ const Mobiles = () => {
 
   return (
     <div className="">
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div className="bg-slate-300 max-h-full flex flex-col justify-start md:col-span-1 md:block p-7">
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+        <div className="md:bg-slate-300 max-h-full flex flex-col justify-start md:col-span-1 md:block px-7">
           <Filters
             setFilteredMobiles={setFilteredMobiles}
             mobiles={mobiles}
@@ -71,7 +71,7 @@ const Mobiles = () => {
         </div>
 
         <animated.div
-          className="md:col-span-2 lg:col-span-2 xl:col-span-3 grid gap-4 p-7"
+          className="md:col-span-2 xl:col-span-3 lg:col-span-3 xl:col-span-3 grid gap-4 px-5 md:p-8"
           style={props}
         >
           {errorMessage ? (
@@ -100,7 +100,7 @@ const Mobiles = () => {
                     src={mobile.image}
                     alt={mobile.name}
                   />
-                  <div className="col-span-2 px-8 text-lg mt-4">
+                  <div className="col-span-2 md:px-8 text-lg mt-4">
                     <h2 className="font-semibold text-2xl text-blue-400">
                       {mobile.name}
                     </h2>
