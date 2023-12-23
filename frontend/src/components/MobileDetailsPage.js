@@ -35,7 +35,7 @@ const MobileDetails = () => {
       <div className="grid max-md:grid-cols-1 md:grid-cols-3 p-5">
         <div className="flex justify-center flex-col items-center">
           <img
-            className="col-span-1 max-w-lg  h-auto rounded-md"
+            className="col-span-1 w-fit  h-auto rounded-md"
             src={mobileDetails.image}
             alt={mobileDetails.name}
           />
@@ -49,45 +49,58 @@ const MobileDetails = () => {
           </div>
         </div>
 
-        <div className=" col-span-2 p-9">
+        <div className=" col-span-2 p-3 md:p-8">
           <div className="flex flex-col justify-evenly items-stretch text-lg">
             <h2 className="font-semibold text-4xl ">{mobileDetails.name}</h2>
             <p className="pt-2 text-2xl text-blue-500">
               {mobileDetails.ratingsAndReviews}
             </p>
-            <p className="text-gray-700 text-2xl font-semibold py-3">
+            <p className="text-gray-700 text-2xl font-semibold max-md:font-bold py-3">
               Price: ₹ {mobileDetails.price}
             </p>
             <p className="text-gray-700 ">
-              <span className="font-semibold"> Type: </span>
+              <span className="font-semibold max-md:font-bold mr-1">
+                {" "}
+                Type:{" "}
+              </span>
               {mobileDetails.type}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> battery:</span>{" "}
+              <span className="font-semibold max-md:font-bold"> battery: </span>{" "}
               {mobileDetails.battery}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> camera:</span>{" "}
+              <span className="font-semibold max-md:font-bold"> camera: </span>{" "}
               {mobileDetails.camera}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> Processor:</span>{" "}
+              <span className="font-semibold max-md:font-bold">
+                {" "}
+                Processor:{" "}
+              </span>{" "}
               {mobileDetails.processor}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> displaySize:</span>{" "}
+              <span className="font-semibold max-md:font-bold">
+                {" "}
+                displaySize:{" "}
+              </span>{" "}
               {mobileDetails.displaySize}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> Memory: </span>
+              <span className="font-semibold max-md:font-bold"> Memory: </span>
               {mobileDetails.memory}
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold"> OS:</span> {mobileDetails.os}
+              <span className="font-semibold max-md:font-bold"> OS: </span>{" "}
+              {mobileDetails.os}
             </p>
 
             <p className="text-gray-700">
-              <span className="font-semibold"> Description: </span>
+              <span className="font-semibold max-md:font-bold">
+                {" "}
+                Description:{" "}
+              </span>
               {mobileDetails.description}
             </p>
           </div>
