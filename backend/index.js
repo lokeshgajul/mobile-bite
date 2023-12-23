@@ -14,7 +14,7 @@ const PORT = 8000;
 
 app.use(express.json());
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace with your React app's origin
+  origin: "https://mobile-lite-backend.vercel.app/",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
