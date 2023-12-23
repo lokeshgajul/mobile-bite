@@ -12,8 +12,8 @@ git clone https://github.com/lokeshgajul/mobile-bite.git
 cd frontend
 
 * Install frontend dependencies:
-npm install react-icons 
-npm install react-spring
+npm install react-icons ,
+npm install react-spring ,
 npm install react-router-dom 
 
 Running the Frontend
