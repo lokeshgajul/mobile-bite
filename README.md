@@ -26,23 +26,23 @@ Backend Folder:
 * Prerequisites
 Make sure you have the following installed on your machine:
 
-Node.js (version v16.15.1)
+Node.js (version v16.15.1)  
 npm (version 8.11.0)
 
 
 * Installation
-Clone the backend repository:
+Clone the backend repository:  
 git clone https://github.com/lokeshgajul/mobile-bite.git
 
 * Navigate to the backend project directory:
 cd backend
 
 * Install backend dependencies:
-npm init -y
-npm install express
-npm install cors
-npm install nodemon
-npm install path
+npm init -y   
+npm install express  
+npm install cors  
+npm install nodemon   
+npm install path  
 
 Running the Backend
 To start the backend server, run:
