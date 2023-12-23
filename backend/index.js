@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import mobileData from "./json/mobilesData.json" assert { type: "json" };
+import path from "path";
 import {
   displayMobiles,
   filterByMemory,
@@ -8,6 +10,14 @@ import {
   filterByProcessor,
   mobileDetails,
 } from "./controller/MobileController.js";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const filePath = path.resolve(__dirname, "./json/mobilesData.json");
+console.log("Resolved Path:", filePath);
 
 const app = express();
 const PORT = 8000;

@@ -1,4 +1,4 @@
-import mobileData from "../mobilesData.json" assert { type: "json" };
+import mobileData from "../json/mobilesData.json" assert { type: "json" };
 
 export const displayMobiles = async (req, res) => {
   try {
