@@ -16,13 +16,16 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
 
     setSelectedMemory(Memory);
     try {
-      const response = await fetch("http://localhost:8000/api/filterByMemory", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ selectedMemory: Memory }),
-      });
+      const response = await fetch(
+        "https://mobile-bite-backend.vercel.app/api/filterByMemory",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ selectedMemory: Memory }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -42,13 +45,16 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
     setSelectedMemory("");
 
     try {
-      const response = await fetch("http://localhost:8000/api/filterByName", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ mobileName }),
-      });
+      const response = await fetch(
+        "https://mobile-bite-backend.vercel.app/api/filterByName",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ mobileName }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -70,7 +76,7 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
     if (processor) {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/filterByProcessor`,
+          `https://mobile-bite-backend.vercel.app/api/filterByProcessor`,
           {
             method: "POST",
             headers: {
@@ -108,7 +114,7 @@ const Filters = ({ setFilteredMobiles, setSearchTerm }) => {
     if (priceRange) {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/filterByPrice`,
+          `https://mobile-bite-backend.vercel.app/api/filterByPrice`,
           {
             method: "POST",
             headers: {
